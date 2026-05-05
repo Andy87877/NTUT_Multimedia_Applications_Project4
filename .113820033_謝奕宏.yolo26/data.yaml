@@ -6,8 +6,8 @@ nc: 1
 names: ['Car']
 
 roboflow:
-  workspace: leicaniss-workspace
-  project: my-first-project-8zov2
+  workspace: andy8787s-workspace
+  project: project4_yolo_v3
   version: 1
   license: CC BY 4.0
-  url: https://universe.roboflow.com/leicaniss-workspace/my-first-project-8zov2/dataset/1
+  url: https://universe.roboflow.com/andy8787s-workspace/project4_yolo_v3/dataset/1

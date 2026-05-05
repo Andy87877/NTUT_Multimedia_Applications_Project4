@@ -8,6 +8,6 @@ names: ['Car']
 roboflow:
   workspace: leicaniss-workspace
   project: my-first-project-8zov2
-  version: 1
+  version: 2
   license: CC BY 4.0
-  url: https://universe.roboflow.com/leicaniss-workspace/my-first-project-8zov2/dataset/1
+  url: https://universe.roboflow.com/leicaniss-workspace/my-first-project-8zov2/dataset/2

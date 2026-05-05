@@ -1,8 +1,8 @@
 
-My First Project - v1 113820020_林政德
+My First Project - v2 113820020_---
 ==============================
 
-This dataset was exported via roboflow.com on May 5, 2026 at 11:39 AM GMT
+This dataset was exported via roboflow.com on May 5, 2026 at 11:56 AM GMT
 
 Roboflow is an end-to-end computer vision platform that helps you
 * collaborate with your team on computer vision projects
@@ -22,7 +22,7 @@ My-First-Project are annotated in YOLO26 format.
 
 The following pre-processing was applied to each image:
 * Auto-orientation of pixel data (with EXIF-orientation stripping)
-* Resize to 512x512 (Stretch)
+* Resize to 512x512 (Fit (white edges))
 
 The following augmentation was applied to create 3 versions of each source image:
 * 50% probability of horizontal flip
