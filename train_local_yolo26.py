@@ -42,7 +42,8 @@ def parse_args():
     )
     parser.add_argument(
         "--data", type=str,
-        default=os.path.join(PROJECT_DIR, "dataset_yolo26", "data.yaml"),
+        default=os.path.join(
+            PROJECT_DIR, "dataset_merged_yolo26", "data.yaml"),
         help="Dataset config file (data.yaml)"
     )
     parser.add_argument(
@@ -71,7 +72,7 @@ def parse_args():
         help="Output directory for training results"
     )
     parser.add_argument(
-        "--name", type=str, default="car_detect",
+        "--name", type=str, default="car_detect_merged",
         help="Experiment name"
     )
     parser.add_argument(
