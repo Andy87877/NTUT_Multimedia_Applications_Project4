@@ -26,8 +26,7 @@ import cv2
 import time
 
 # 隧道
-tunnel_url = 'https://cctvn5.freeway.gov.tw/abs2mjpg/bmjpg?camera=fffe8f1f-fac6-4fef-8a71-01462fc8354d&0.3955987206798097&t1968=0.5135032914195135'
-
+tunnel_url = 'https://cctvn.freeway.gov.tw/abs2mjpg/bmjpg?camera=10000&0.93428325644914'
 
 url = tunnel_url
 
