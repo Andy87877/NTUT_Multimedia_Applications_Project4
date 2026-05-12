@@ -1,13 +1,36 @@
 # 🚗 Project4 — YOLO 車輛偵測專案
 
-> **國立臺北科技大學 多媒體應用 Project4**
+> **課程**: 多媒體應用 Project 4 — YOLO 車輛偵測專案
 >
-> **電資二 113820033 謝奕宏**
-> 
-> **電資二 113820020 林政德**
+> **組員**: 電資二 113820033 謝奕宏  
+> **組員**: 電資二 113820020 林政德  
+>
+> **指導教授**: 陳彥霖 (Yen-Lin Chen), Ph.D.  
+> **學校**: 國立臺北科技大學 電資學士班
+> **學期**: Spring 2026
 >
 > 使用 YOLO 物件偵測模型，對道路行車影片進行車輛偵測與標記。
 > 本專案同時實作了 **YOLOv4-tiny**（Darknet/PyTorch）與 **YOLO26**（Ultralytics）兩套偵測管線。
+
+### 📊 檢測效果展示
+
+<table>
+  <tr>
+    <td align="center"><img src="Detect_random_imgs/imgs_detected/highway_01_t00162s.jpg" width="200" alt="Highway Detection 1"/><br/><b>高速公路場景</b></td>
+    <td align="center"><img src="Detect_random_imgs/imgs_detected/night_01_t00175s.jpg" width="200" alt="Night Detection"/><br/><b>夜間偵測</b></td>
+    <td align="center"><img src="Detect_random_imgs/imgs_detected/rainy_02_t00632s.jpg" width="200" alt="Rainy Detection"/><br/><b>雨天偵測</b></td>
+  </tr>
+</table>
+
+### 🎬 實際偵測影片
+
+**國道一號縮時攝影 — YOLO26 即時偵測**
+
+[![YouTube Video](https://img.youtube.com/vi/k1w0ZYXjPAk/maxresdefault.jpg)](https://youtu.be/k1w0ZYXjPAk)
+
+https://youtu.be/k1w0ZYXjPAk
+
+*點擊上方圖片觀看完整影片 | 展示多車道密集車流的即時偵測效果*
 
 ---
 
@@ -44,6 +67,14 @@
 | **模型 A** | YOLOv4-tiny（Darknet → PyTorch，手動訓練管線） |
 | **模型 B** | YOLO26n（Ultralytics，2026 年 1 月釋出，NMS-free 端對端推論） |
 | **硬體** | NVIDIA GTX 1650（4 GB VRAM），CUDA 加速 |
+
+**✨ 特色**
+
+- 🚗 雙模型架構，性能對比測試
+- 🎯 高精度（mAP@50 = 0.863）
+- ⚡ GPU 加速推論，實時處理 FPS ≥ 24
+- 🌙 全天候適應（日間、夜間、雨天場景）
+- 📊 完整訓練管線與視覺化分析
 
 ---
 
@@ -193,6 +224,14 @@ python detect_image_yoloV4.py --image test.jpg --weights backup/yolov4-tiny-cust
 ```
 
 輸出：原圖旁產生 `_yolo26` 或 `_predictions` 後綴的標記結果圖。
+
+**檢測結果示例**：
+
+| 場景 | 結果 |
+|------|------|
+| <img src="Detect_random_imgs/imgs_detected/highway_02_t00172s.jpg" width="180" alt="Highway 2"/> | 高速公路密集車流偵測 |
+| <img src="Detect_random_imgs/imgs_detected/night_02_t00218s.jpg" width="180" alt="Night 2"/> | 夜間低光源環境偵測 |
+| <img src="Detect_random_imgs/imgs_detected/rainy_02_t00632s.jpg" width="180" alt="Rainy 2"/> | 雨天視線受阻偵測 |
 
 ---
 
@@ -448,6 +487,25 @@ results = model.predict(source="test.jpg")
 | **Recall** | 0.840 | 偵測召回率 |
 | **Box Loss** | 1.189 → 收斂 | 邊界框定位損失 |
 | **Cls Loss** | 4.903 → 0.569 | 分類損失（大幅下降） |
+
+### 多場景偵測覆蓋
+
+本專案在 **100 張多樣化測試圖片** 上取得穩定表現：
+
+<table>
+  <tr>
+    <td><img src="Detect_random_imgs/imgs_detected/highway_03_t00204s.jpg" width="150" alt="Highway 3"/></td>
+    <td><img src="Detect_random_imgs/imgs_detected/night_03_t00276s.jpg" width="150" alt="Night 3"/></td>
+    <td><img src="Detect_random_imgs/imgs_detected/rainy_02_t00632s.jpg" width="150" alt="Rainy 3"/></td>
+    <td><img src="Detect_random_imgs/imgs_detected/highway_04_t00216s.jpg" width="150" alt="Highway 4"/></td>
+  </tr>
+  <tr>
+    <td align="center" style="font-size:12px;"><b>日間公路</b></td>
+    <td align="center" style="font-size:12px;"><b>夜間低光</b></td>
+    <td align="center" style="font-size:12px;"><b>雨天視障</b></td>
+    <td align="center" style="font-size:12px;"><b>密集車流</b></td>
+  </tr>
+</table>
 
 ---
 
